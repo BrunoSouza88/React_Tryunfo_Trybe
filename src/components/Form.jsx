@@ -28,6 +28,7 @@ class Form extends React.Component {
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
+            // { hasTrunfo && <p>Você já tem um Super Trunfo em seu baralho</p> }
           />
         </label>
         <label htmlFor="description-input">

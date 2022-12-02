@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Card from './components/Card';
@@ -60,9 +61,10 @@ class App extends React.Component {
     }, this.handleValidations);
   };
 
-  onSaveButtonClick = (event) => {
-    event.preventDefault();
-    const { cardName,
+  onSaveButtonClick = () => {
+    // event.preventDefault();
+    const {
+      cardName,
       cardDescription,
       cardImage,
       cardAttr1,
@@ -71,22 +73,25 @@ class App extends React.Component {
       cardRare,
       cardTrunfo,
     } = this.state;
-    const newCard = { cardName,
+
+    const newCard = {
+      cardName,
       cardDescription,
       cardImage,
       cardAttr1,
       cardAttr2,
       cardAttr3,
       cardRare,
-      cardTrunfo };
+      cardTrunfo,
+    };
 
     this.setState(({ registredCards }) => ({
       cardName: '',
       cardDescription: '',
       cardImage: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardRare: 'normal',
       registredCards: [...registredCards, newCard],
     }));
@@ -94,6 +99,7 @@ class App extends React.Component {
   };
 
   render() {
+    const { registredCards } = this.state;
     return (
       <div>
         <h1>Tryunfo</h1>
@@ -105,7 +111,31 @@ class App extends React.Component {
         <Card
           { ...this.state }
         />
+        {
+          registredCards.map(({
+            cardName,
+            cardDescription,
+            cardImage,
+            cardAttr1,
+            cardAttr2,
+            cardAttr3,
+            cardRare,
+            cardTrunfo }) => (
+            <Card
+              key={ cardName }
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardImage={ cardImage }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+            />
+          ))
+        }
       </div>
+
     );
   }
 }
