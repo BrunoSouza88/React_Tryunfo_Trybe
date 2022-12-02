@@ -23,8 +23,8 @@ class App extends React.Component {
     const maxAttri = 90;
     const minAttri = 0;
     const maxSum = 210;
-    const intCardAttr1 = cardAttr1 * 1;
-    const intCardAttr2 = +cardAttr2;
+    const intCardAttr1 = cardAttr1 * 1; // https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/#:~:text=(quantity))%3B-,How%20to%20convert%20a%20string%20to%20a%20number%20in%20JavaScript,will%20go%20before%20the%20operand.&text=We%20can%20also%20use%20the,into%20a%20floating%20point%20number.
+    const intCardAttr2 = +cardAttr2; // https://www.freecodecamp.org/news/how-to-convert-a-string-to-a-number-in-javascript/#:~:text=(quantity))%3B-,How%20to%20convert%20a%20string%20to%20a%20number%20in%20JavaScript,will%20go%20before%20the%20operand.&text=We%20can%20also%20use%20the,into%20a%20floating%20point%20number.
     const intCardAttr3 = parseInt(cardAttr3, 10);
     const AttributesSum = intCardAttr1 + intCardAttr2 + intCardAttr3;
 
