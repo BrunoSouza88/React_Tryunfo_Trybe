@@ -23,8 +23,8 @@ class App extends React.Component {
     const maxAttri = 90;
     const minAttri = 0;
     const maxSum = 210;
-    const intCardAttr1 = parseInt(cardAttr1, 10);
-    const intCardAttr2 = parseInt(cardAttr2, 10);
+    const intCardAttr1 = cardAttr1 * 1;
+    const intCardAttr2 = +cardAttr2;
     const intCardAttr3 = parseInt(cardAttr3, 10);
     const AttributesSum = intCardAttr1 + intCardAttr2 + intCardAttr3;
 
