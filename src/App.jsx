@@ -60,6 +60,39 @@ class App extends React.Component {
     }, this.handleValidations);
   };
 
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    const { cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+    const newCard = { cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+      cardTrunfo };
+
+    this.setState(({ registredCards }) => ({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardRare: 'normal',
+      registredCards: [...registredCards, newCard],
+    }));
+    // console.log('Olá estranho');
+  };
+
   render() {
     return (
       <div>
@@ -67,6 +100,7 @@ class App extends React.Component {
         <Form
           { ... this.state }
           onInputChange={ this.handleChange }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           { ...this.state }

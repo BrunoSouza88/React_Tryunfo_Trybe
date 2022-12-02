@@ -19,7 +19,7 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <form onSubmit={ onSaveButtonClick }>
         <label htmlFor="name-input">
           <input
             type="text"
@@ -106,14 +106,14 @@ class Form extends React.Component {
           />
         </label>
         <button
-          type="submit"
+          type="button"
           data-testid="save-button"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >
           Salvar
         </button>
-      </div>
+      </form>
     );
   }
 }
