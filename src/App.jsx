@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-indent */
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Card from './components/Card';
@@ -61,8 +60,8 @@ class App extends React.Component {
     }, this.handleValidations);
   };
 
-  onSaveButtonClick = () => {
-    // event.preventDefault();
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
     const {
       cardName,
       cardDescription,
@@ -72,6 +71,8 @@ class App extends React.Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
+      // registredCards,
+      hasTrunfo,
     } = this.state;
 
     const newCard = {
@@ -93,7 +94,10 @@ class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
       registredCards: [...registredCards, newCard],
+      hasTrunfo: newCard.cardTrunfo ? true : hasTrunfo,
     }));
   };
 
@@ -120,18 +124,17 @@ class App extends React.Component {
             cardAttr3,
             cardRare,
             cardTrunfo,
-          }) => (
-            <Card
-              key={ cardName }
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardImage={ cardImage }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-            />
+          }) => (<Card
+            key={ cardName }
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardImage={ cardImage }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
           ))
         }
       </div>
