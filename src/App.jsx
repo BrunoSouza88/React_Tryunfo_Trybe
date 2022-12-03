@@ -95,7 +95,6 @@ class App extends React.Component {
       cardRare: 'normal',
       registredCards: [...registredCards, newCard],
     }));
-    // console.log('Olá estranho');
   };
 
   render() {
@@ -120,7 +119,8 @@ class App extends React.Component {
             cardAttr2,
             cardAttr3,
             cardRare,
-            cardTrunfo }) => (
+            cardTrunfo,
+          }) => (
             <Card
               key={ cardName }
               cardName={ cardName }
@@ -135,7 +135,6 @@ class App extends React.Component {
           ))
         }
       </div>
-
     );
   }
 }
