@@ -21,6 +21,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={ onSaveButtonClick }>
         <label htmlFor="name-input">
+          Nome da carta:
           <input
             type="text"
             name="cardName"
@@ -31,6 +32,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="description-input">
+          Descrição:
           <textarea
             type="text"
             name="cardDescription"
@@ -43,6 +45,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
+          Atributo 1:
           <input
             type="number"
             name="cardAttr1"
@@ -53,6 +56,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
+          Atributo 2:
           <input
             type="number"
             name="cardAttr2"
@@ -63,6 +67,7 @@ class Form extends React.Component {
           />
         </label>
         <label htmlFor="attr1-input">
+          Atributo 3:
           <input
             type="number"
             name="cardAttr3"
@@ -72,6 +77,7 @@ class Form extends React.Component {
             onChange={ onInputChange }
           />
         </label>
+        Link da imagem:
         <label htmlFor="image-input">
           <input
             type="text"
@@ -82,6 +88,7 @@ class Form extends React.Component {
             onChange={ onInputChange }
           />
         </label>
+        Raridade:
         <label htmlFor="rare-input">
           <select
             name="cardRare"
@@ -99,6 +106,7 @@ class Form extends React.Component {
           <label
             htmlFor="trunfo-input"
           >
+            Super Trunfo
             <input
               type="checkbox"
               name="cardTrunfo"
